@@ -1,0 +1,13 @@
+services:
+  export-metrics:
+    image: "gcr.io/cadvisor/cadvisor"
+    container_name: "cadvisor"
+    privileged: "true"
+    ports:
+      - "1111:8080"
+    volumes:
+      - "/var/run:/var/run"
+      - "/sys:/sys"
+      - "/var/lib/docker:/var/lib/docker"
+      - "/dev/disk:/dev/disk"
+
